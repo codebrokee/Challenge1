@@ -1,3 +1,4 @@
+
 body{   
     margin: 1.5em;
     font-family: 'Poppins', sans-serif;
@@ -19,6 +20,7 @@ a {
     width: 100%;
     height: 100vh;
     z-index: -1;
+    animation: introLoad 2s forwards;
 }
 
 .logo {
@@ -36,7 +38,7 @@ a {
     z-index: 500;
     text-transform: uppercase;
     transform: translateX(100%);
-    transition: transform .5s ease-in-out;
+    transition: transform .2s ease-in-out;
 
     ul{
         list-style-type: none;
@@ -86,17 +88,25 @@ h1 {
 section.hero{
     color: white;
     height: 90vh;
+    animation: moveDown .3s ease-in-out forwards;
+    opacity: 0;
 
     .down-arrow{
         stroke: white;
         position: absolute;
         bottom: 8em;
         width: 1em;
+        animation: moveArrow 1s alternate-reverse infinite;
+        margin-top: 2em;
 
         path{
              fill: white;
         }
     }
+}
+
+.mobile{
+    padding-top: 2em;
 }
 
 .more-info {
@@ -118,6 +128,10 @@ section.hero{
     }
 }
 
+.open-nav {
+    transform: translateX(0%);
+}
+
 @media only screen and (min-width: 680px){
     
     body{   
@@ -131,6 +145,10 @@ section.hero{
     
     .menu {
         display: none;
+    }
+
+    .more-info{
+        padding-top: 2em;
     }
 
     nav {
@@ -161,4 +179,112 @@ section.hero{
         }
     }
 }
+
+    .hero-img{
+        left: unset;
+        right: 0;
+        width: 50%;
+        height: 42em;
+    }
+
+    .logo{
+        color: black;
+
+        span{
+            color: red;
+        }
+    }
+
+    section.hero{
+        color: black;
+        height: auto;
+        width: 40%;
+        margin-bottom: 8em;
+
+        svg.down-arrow{
+            stroke: black;
+            position: unset;
+            margin-top: 2em;
+
+            path{
+                fill: black;
+            }
+        }
+    }
+
+    .feature{
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        gap: 3em;
+        margin-bottom: 8em;
+
+        img{
+            width: 25em;
+        }
+
+        .content{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: right;
+            width: 25em;
+        }
+    }
+
+    .feature.left{
+        grid-template-areas: 
+        "left right";
+
+        img{
+            grid-area: left;
+        }
+
+        .content{
+            text-align: left;
+            width: 25em;
+            justify-self: left;
+        }
+    }
+    h1 span {
+        color: red;
+    }
+}
+
+@media only screen and (min-width: 1200px){
+    .wrapper{
+        width: 1200px;
+        margin: 0 auto;
+    }
+
+    .feature{
+        gap: 0;
+    }
+}
+
+@keyframes introLoad{
+    from{
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    to{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+@keyframes moveArrow{
+    from{
+        transform: translateY(-30px);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+
+@keyframes moveDown{
+    from{
+        transform: translateY(-100px);
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
