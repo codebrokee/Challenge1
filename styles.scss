@@ -132,6 +132,21 @@ section.hero{
     transform: translateX(0%);
 }
 
+footer {
+    text-align: center;
+}
+.container {
+    display: flex;
+    justify-content: center;
+
+    li {
+        list-style: none;
+        padding: 2.5em 5em;
+        color: black;
+    }
+}
+
+
 @media only screen and (min-width: 680px){
     
     body{   

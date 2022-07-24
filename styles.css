@@ -92,9 +92,14 @@ section.hero .down-arrow {
   bottom: 8em;
   width: 1em;
   animation: moveArrow 1s alternate-reverse infinite;
+  margin-top: 2em;
 }
 section.hero .down-arrow path {
   fill: white;
+}
+
+.mobile {
+  padding-top: 2em;
 }
 
 .more-info img {
@@ -112,6 +117,24 @@ section.hero .down-arrow path {
   line-height: 1.5rem;
 }
 
+.open-nav {
+  transform: translateX(0%);
+}
+
+footer {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+.container li {
+  list-style: none;
+  padding: 2.5em 5em;
+  color: black;
+}
+
 @media only screen and (min-width: 680px) {
   body {
     margin: 1.5em 5em;
@@ -121,6 +144,9 @@ section.hero .down-arrow path {
 @media only screen and (min-width: 920px) {
   .menu {
     display: none;
+  }
+  .more-info {
+    padding-top: 2em;
   }
   nav {
     transform: translateX(0);
@@ -167,6 +193,7 @@ section.hero .down-arrow path {
   section.hero svg.down-arrow {
     stroke: black;
     position: unset;
+    margin-top: 2em;
   }
   section.hero svg.down-arrow path {
     fill: black;
@@ -181,6 +208,9 @@ section.hero .down-arrow path {
     width: 25em;
   }
   .feature .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: right;
     width: 25em;
   }
@@ -194,6 +224,9 @@ section.hero .down-arrow path {
     text-align: left;
     width: 25em;
     justify-self: left;
+  }
+  h1 span {
+    color: red;
   }
 }
 @media only screen and (min-width: 1200px) {
